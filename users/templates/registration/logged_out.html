@@ -1,0 +1,12 @@
+{% extends "learning_logs/base.html" %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h1 class="display-4">You have been logged out</h1>
+                <p class="lead">Thank you for using Learning Log. You have been successfully logged out.</p>
+                <a href="{% url 'learning_logs:index' %}" class="btn btn-primary btn-lg">Return to Home</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

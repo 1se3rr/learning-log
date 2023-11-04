@@ -1,0 +1,34 @@
+{% extends "learning_logs/base.html" %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-center">
+                        <h4 class="font-weight-bold text-white">Log in</h4>
+                    </div>
+                    <div class="card-body">
+                        {% if form.errors %}
+                            <p class="text-danger">Имя пользователя и пароль не совпадают. Пожалуйста, попробуйте снова.</p>
+                        {% endif %}
+                        <form method="post" action="{% url 'users:login' %}">
+                            {% csrf_token %}
+                            <div class="form-group text-center">
+                                <label for="id_username" >User name</label>
+                                 <br>
+                                {{ form.username }}
+                            </div>
+                            <div class="form-group text-center">
+                                <label for="id_password">Password</label>
+                                 <br>
+                                {{ form.password }}
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block">Enter</button>
+                            <input type="hidden" name="next" value="{% url 'learning_logs:index' %}">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
