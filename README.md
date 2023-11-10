@@ -15,7 +15,7 @@ learning log - это веб-сайт, созданный с использов�
 - На Windows:
 
   ```
-  myenv\Scripts\activate
+  ll_env\Scripts\activate
   ```
 
 - На macOS и Linux:
